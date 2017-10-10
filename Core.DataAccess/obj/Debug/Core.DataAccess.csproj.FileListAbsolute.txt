@@ -1,0 +1,46 @@
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\Qlnk.DataAccess.dll.config
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\Qlnk.DataAccess.dll
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\Qlnk.DataAccess.pdb
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\EntityFramework.dll
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\Qlnk.Common.dll
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\Newtonsoft.Json.dll
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\Qlnk.Common.pdb
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\EntityFramework.xml
+D:\github\New folder\CoreDI\Core.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\github\New folder\CoreDI\Core.DataAccess\obj\Debug\Core.DataAccess.csprojResolveAssemblyReference.cache
+D:\github\New folder\CoreDI\Core.DataAccess\obj\Debug\Core.DataAccess.csproj.CoreCompileInputs.cache
+D:\github\New folder\CoreDI\Core.DataAccess\obj\Debug\Qlnk.DataAccess.dll
+D:\github\New folder\CoreDI\Core.DataAccess\obj\Debug\Qlnk.DataAccess.pdb
+D:\github\CoreDI\Core.DataAccess\bin\Debug\Qlnk.DataAccess.dll.config
+D:\github\CoreDI\Core.DataAccess\bin\Debug\Qlnk.DataAccess.dll
+D:\github\CoreDI\Core.DataAccess\bin\Debug\Qlnk.DataAccess.pdb
+D:\github\CoreDI\Core.DataAccess\bin\Debug\EntityFramework.dll
+D:\github\CoreDI\Core.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\github\CoreDI\Core.DataAccess\bin\Debug\Qlnk.Common.dll
+D:\github\CoreDI\Core.DataAccess\bin\Debug\Newtonsoft.Json.dll
+D:\github\CoreDI\Core.DataAccess\bin\Debug\Qlnk.Common.pdb
+D:\github\CoreDI\Core.DataAccess\bin\Debug\EntityFramework.xml
+D:\github\CoreDI\Core.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\github\CoreDI\Core.DataAccess\obj\Debug\Core.DataAccess.csprojResolveAssemblyReference.cache
+D:\github\CoreDI\Core.DataAccess\obj\Debug\Core.DataAccess.csproj.CoreCompileInputs.cache
+D:\github\CoreDI\Core.DataAccess\obj\Debug\Qlnk.DataAccess.dll
+D:\github\CoreDI\Core.DataAccess\obj\Debug\Qlnk.DataAccess.pdb
+D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.csprojResolveAssemblyReference.cache
+D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.csproj.CoreCompileInputs.cache
+D:\github\Core\Core.DataAccess\bin\Debug\Core.DataAccess.dll.config
+D:\github\Core\Core.DataAccess\bin\Debug\Core.DataAccess.dll
+D:\github\Core\Core.DataAccess\bin\Debug\Core.DataAccess.pdb
+D:\github\Core\Core.DataAccess\bin\Debug\Core.Business.dll
+D:\github\Core\Core.DataAccess\bin\Debug\EntityFramework.dll
+D:\github\Core\Core.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\github\Core\Core.DataAccess\bin\Debug\Core.Common.dll
+D:\github\Core\Core.DataAccess\bin\Debug\Newtonsoft.Json.dll
+D:\github\Core\Core.DataAccess\bin\Debug\Core.Business.pdb
+D:\github\Core\Core.DataAccess\bin\Debug\EntityFramework.xml
+D:\github\Core\Core.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\github\Core\Core.DataAccess\bin\Debug\Core.Common.pdb
+D:\github\Core\Core.DataAccess\bin\Debug\Core.Common.dll.config
+D:\github\Core\Core.DataAccess\bin\Debug\Newtonsoft.Json.xml
+D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.dll
+D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.pdb

@@ -1,0 +1,9 @@
+D:\github\Core\Core.Common\obj\Debug\Core.Common.csproj.CoreCompileInputs.cache
+D:\github\Core\Core.Common\bin\Debug\Core.Common.dll.config
+D:\github\Core\Core.Common\bin\Debug\Core.Common.dll
+D:\github\Core\Core.Common\bin\Debug\Core.Common.pdb
+D:\github\Core\Core.Common\bin\Debug\Newtonsoft.Json.dll
+D:\github\Core\Core.Common\bin\Debug\Newtonsoft.Json.xml
+D:\github\Core\Core.Common\obj\Debug\Core.Common.csprojResolveAssemblyReference.cache
+D:\github\Core\Core.Common\obj\Debug\Core.Common.dll
+D:\github\Core\Core.Common\obj\Debug\Core.Common.pdb

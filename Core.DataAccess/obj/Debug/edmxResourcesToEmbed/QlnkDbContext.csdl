@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLNKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="NHAN_KHAU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoVaTen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HoVaTenGoiKhac" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="QueQuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DanToc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="QuocTich" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CMND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HoChieu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="QuanHeVoiChuHo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Int64" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Id_HoKhau" Type="Int64" />
+    <NavigationProperty Name="SO_HO_KHAU" Relationship="Self.FK_NHAN_KHAU_SO_HO_KHAU" FromRole="NHAN_KHAU" ToRole="SO_HO_KHAU" />
+    <NavigationProperty Name="TRANG_THAI" Relationship="Self.FK_NHAN_KHAU_TRANG_THAI" FromRole="NHAN_KHAU" ToRole="TRANG_THAI" />
+  </EntityType>
+  <EntityType Name="SO_HO_KHAU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaSHK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NoiThuongChu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IdChuHo" Type="Int64" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="NHAN_KHAU" Relationship="Self.FK_NHAN_KHAU_SO_HO_KHAU" FromRole="SO_HO_KHAU" ToRole="NHAN_KHAU" />
+  </EntityType>
+  <EntityType Name="TRANG_THAI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <NavigationProperty Name="NHAN_KHAU" Relationship="Self.FK_NHAN_KHAU_TRANG_THAI" FromRole="TRANG_THAI" ToRole="NHAN_KHAU" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_NHAN_KHAU_SO_HO_KHAU">
+    <End Role="SO_HO_KHAU" Type="Self.SO_HO_KHAU" Multiplicity="0..1" />
+    <End Role="NHAN_KHAU" Type="Self.NHAN_KHAU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_HO_KHAU">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NHAN_KHAU">
+        <PropertyRef Name="Id_HoKhau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHAN_KHAU_TRANG_THAI">
+    <End Role="TRANG_THAI" Type="Self.TRANG_THAI" Multiplicity="0..1" />
+    <End Role="NHAN_KHAU" Type="Self.NHAN_KHAU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANG_THAI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NHAN_KHAU">
+        <PropertyRef Name="TrangThai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLNKEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NHAN_KHAU" EntityType="Self.NHAN_KHAU" />
+    <EntitySet Name="SO_HO_KHAU" EntityType="Self.SO_HO_KHAU" />
+    <EntitySet Name="TRANG_THAI" EntityType="Self.TRANG_THAI" />
+    <EntitySet Name="USERs" EntityType="Self.USER" />
+    <AssociationSet Name="FK_NHAN_KHAU_SO_HO_KHAU" Association="Self.FK_NHAN_KHAU_SO_HO_KHAU">
+      <End Role="SO_HO_KHAU" EntitySet="SO_HO_KHAU" />
+      <End Role="NHAN_KHAU" EntitySet="NHAN_KHAU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHAN_KHAU_TRANG_THAI" Association="Self.FK_NHAN_KHAU_TRANG_THAI">
+      <End Role="TRANG_THAI" EntitySet="TRANG_THAI" />
+      <End Role="NHAN_KHAU" EntitySet="NHAN_KHAU" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

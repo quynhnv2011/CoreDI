@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLNKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="NHAN_KHAU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HoVaTen" Type="nvarchar" MaxLength="100" />
+    <Property Name="HoVaTenGoiKhac" Type="nvarchar" MaxLength="100" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="50" />
+    <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="GioiTinh" Type="bit" />
+    <Property Name="QuocTich" Type="nvarchar" MaxLength="50" />
+    <Property Name="CMND" Type="varchar" MaxLength="50" />
+    <Property Name="HoChieu" Type="varchar" MaxLength="50" />
+    <Property Name="QuanHeVoiChuHo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TrangThai" Type="bigint" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Id_HoKhau" Type="bigint" />
+  </EntityType>
+  <EntityType Name="SO_HO_KHAU">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaSHK" Type="varchar" MaxLength="50" />
+    <Property Name="NoiThuongChu" Type="nvarchar" MaxLength="500" />
+    <Property Name="IdChuHo" Type="bigint" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TRANG_THAI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="bigint" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_NHAN_KHAU_SO_HO_KHAU">
+    <End Role="SO_HO_KHAU" Type="Self.SO_HO_KHAU" Multiplicity="0..1" />
+    <End Role="NHAN_KHAU" Type="Self.NHAN_KHAU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SO_HO_KHAU">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NHAN_KHAU">
+        <PropertyRef Name="Id_HoKhau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHAN_KHAU_TRANG_THAI">
+    <End Role="TRANG_THAI" Type="Self.TRANG_THAI" Multiplicity="0..1" />
+    <End Role="NHAN_KHAU" Type="Self.NHAN_KHAU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANG_THAI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NHAN_KHAU">
+        <PropertyRef Name="TrangThai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLNKModelStoreContainer">
+    <EntitySet Name="NHAN_KHAU" EntityType="Self.NHAN_KHAU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SO_HO_KHAU" EntityType="Self.SO_HO_KHAU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRANG_THAI" EntityType="Self.TRANG_THAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_NHAN_KHAU_SO_HO_KHAU" Association="Self.FK_NHAN_KHAU_SO_HO_KHAU">
+      <End Role="SO_HO_KHAU" EntitySet="SO_HO_KHAU" />
+      <End Role="NHAN_KHAU" EntitySet="NHAN_KHAU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHAN_KHAU_TRANG_THAI" Association="Self.FK_NHAN_KHAU_TRANG_THAI">
+      <End Role="TRANG_THAI" EntitySet="TRANG_THAI" />
+      <End Role="NHAN_KHAU" EntitySet="NHAN_KHAU" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -18,6 +20,8 @@ namespace Core.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             //khởi tạo dependence injection
             UnityConfig.RegisterComponents();
+
+            //Database.SetInitializer<CoreDbContext>(null);
         }
     }
 }

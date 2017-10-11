@@ -1,4 +1,6 @@
-﻿using Core.Business.Object;
+﻿using Core.Business;
+using Core.Business.EF;
+using Core.Business.Object;
 using Core.DataAccess;
 using Core.DataAccess.Data;
 using System;
@@ -12,22 +14,18 @@ namespace Core.Service.Users
     public partial class UserService : IUserService
     {
         #region Fields     
-        public readonly IRepository<User> _userRepo;
+        public readonly IRepository<CoreUser> _userRepo;
         #endregion
 
-        #region Constructors 
-        public UserService()
-        {
-            _userRepo = new EfRepository<User>();
-        }
-        public UserService(IRepository<User> userRepo)
+        #region Constructors        
+        public UserService(IRepository<CoreUser> userRepo)
         {
             this._userRepo = userRepo;
         }
         #endregion
 
 
-        public void AddUser(User item, ref string err)
+        public void AddUser(CoreUser item, ref string err)
         {
             try
             {
@@ -39,10 +37,11 @@ namespace Core.Service.Users
             }           
         }
 
-        public IQueryable<User> GetAllUser()
+        public IQueryable<CoreUser> GetAllUser()
         {
             try
             {
+               
                 var query = from f in _userRepo.Table
                             select f;
                 return query;              
@@ -54,7 +53,7 @@ namespace Core.Service.Users
            
         }
 
-        public User GetUserById(int id)
+        public CoreUser GetUserById(int id)
         {
             try
             {
@@ -65,22 +64,42 @@ namespace Core.Service.Users
             }
         }
 
-        public bool LogIn(string userName, string passWord, ref User user)
+        public bool LogIn(string userName, string passWord, ref CoreUser user)
         {
-            user = new User
+            user = new CoreUser
             {
                 UserName = "quynhnv",
-                PassWord = "12345",
-                Id = 1
+                Password = "12345",
+                UserID = 1
             };
             return true;
         }
 
-        public void UpdateUser(User item, ref string err)
+        public IQueryable<CoreUser> Search(string userName, string email, int pageIndex = 0, int pageSize = int.MaxValue)
         {
             try
             {
-                 _userRepo.Update(item);
+                var query = _userRepo.Table;                
+                if (!String.IsNullOrWhiteSpace(userName))
+                    query = query.Where(c => c.UserName.Contains(userName));
+                if (!String.IsNullOrWhiteSpace(email))
+                    query = query.Where(c => c.Email.Contains(email));
+                query = query.OrderBy(c => c.UserName);
+
+                var listUser = query.Skip(pageIndex * pageSize).Take(pageSize);
+                return listUser;
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public void UpdateUser(CoreUser item, ref string err)
+        {
+            try
+            {
+                _userRepo.Update(item);
             }
             catch (Exception ex)
             {

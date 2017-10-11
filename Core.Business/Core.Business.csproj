@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,8 +52,57 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
-    <Compile Include="Object\User.cs" />
-    <Compile Include="PagingObject.cs" />
+    <Compile Include="EF\CoreBranch.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreFunction.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreGroup.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreRole.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreRoleFunction.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreRoleHomePage.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreUser.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreUserBranch.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreUserInGroup.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\CoreUserRole.cs">
+      <DependentUpon>CoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IPagedList.cs" />
+    <Compile Include="Object\CoreFunction.cs" />
+    <Compile Include="Object\CoreRoleFunction.cs" />
+    <Compile Include="Object\CoreUser.cs" />
+    <Compile Include="Object\UserRoleInfo.cs" />
+    <Compile Include="PagedList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +110,33 @@
       <Project>{9db093d7-1308-4294-adab-5db07cd08c0d}</Project>
       <Name>Core.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="EF\CoreDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CoreDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\CoreDbContext.edmx.diagram">
+      <DependentUpon>CoreDbContext.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EF\CoreDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoreDbContext.edmx</DependentUpon>
+      <LastGenOutput>CoreDbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\CoreDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CoreDbContext.edmx</DependentUpon>
+      <LastGenOutput>CoreDbContext.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

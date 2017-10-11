@@ -47,15 +47,15 @@ intellisense.annotate(jQuery, {
     /// </signature>
   },
   'boxModel': function() {
-    /// <summary>Deprecated in jQuery 1.3 (see jQuery.support). States if the current page, in the user's browser, is being rendered using the W3C CSS Box Model.</summary>
+    /// <summary>Deprecated in jQuery 1.3 (see jQuery.support). States if the current page, in the UserInfo's browser, is being rendered using the W3C CSS Box Model.</summary>
     /// <returns type="Boolean" />
   },
   'browser': function() {
-    /// <summary>Contains flags for the useragent, read from navigator.userAgent. We recommend against using this property; please try to use feature detection instead (see jQuery.support). jQuery.browser may be moved to a plugin in a future release of jQuery.</summary>
+    /// <summary>Contains flags for the UserInfoagent, read from navigator.UserInfoAgent. We recommend against using this property; please try to use feature detection instead (see jQuery.support). jQuery.browser may be moved to a plugin in a future release of jQuery.</summary>
     /// <returns type="PlainObject" />
   },
   'browser.version': function() {
-    /// <summary>The version number of the rendering engine for the user's browser.</summary>
+    /// <summary>The version number of the rendering engine for the UserInfo's browser.</summary>
     /// <returns type="String" />
   },
   'Callbacks': function() {

@@ -26,8 +26,6 @@ D:\github\CoreDI\Core.DataAccess\obj\Debug\Core.DataAccess.csprojResolveAssembly
 D:\github\CoreDI\Core.DataAccess\obj\Debug\Core.DataAccess.csproj.CoreCompileInputs.cache
 D:\github\CoreDI\Core.DataAccess\obj\Debug\Qlnk.DataAccess.dll
 D:\github\CoreDI\Core.DataAccess\obj\Debug\Qlnk.DataAccess.pdb
-D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.csprojResolveAssemblyReference.cache
-D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.csproj.CoreCompileInputs.cache
 D:\github\Core\Core.DataAccess\bin\Debug\Core.DataAccess.dll.config
 D:\github\Core\Core.DataAccess\bin\Debug\Core.DataAccess.dll
 D:\github\Core\Core.DataAccess\bin\Debug\Core.DataAccess.pdb
@@ -37,10 +35,13 @@ D:\github\Core\Core.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
 D:\github\Core\Core.DataAccess\bin\Debug\Core.Common.dll
 D:\github\Core\Core.DataAccess\bin\Debug\Newtonsoft.Json.dll
 D:\github\Core\Core.DataAccess\bin\Debug\Core.Business.pdb
+D:\github\Core\Core.DataAccess\bin\Debug\Core.Business.dll.config
 D:\github\Core\Core.DataAccess\bin\Debug\EntityFramework.xml
 D:\github\Core\Core.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 D:\github\Core\Core.DataAccess\bin\Debug\Core.Common.pdb
 D:\github\Core\Core.DataAccess\bin\Debug\Core.Common.dll.config
 D:\github\Core\Core.DataAccess\bin\Debug\Newtonsoft.Json.xml
+D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.csprojResolveAssemblyReference.cache
+D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.csproj.CoreCompileInputs.cache
 D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.dll
 D:\github\Core\Core.DataAccess\obj\Debug\Core.DataAccess.pdb

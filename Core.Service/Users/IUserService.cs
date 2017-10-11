@@ -1,4 +1,5 @@
-﻿using Core.Business.Object;
+﻿using Core.Business.EF;
+using Core.Business.Object;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,11 @@ namespace Core.Service.Users
 {
     public partial interface IUserService
     {
-        bool LogIn(string userName, string passWord, ref User user);
-        void AddUser(User item, ref string err);
-        void UpdateUser(User item, ref string err);
-        User GetUserById(int id);
-        IQueryable<User> GetAllUser();
+        bool LogIn(string userName, string passWord, ref CoreUser user);
+        void AddUser(CoreUser item, ref string err);
+        void UpdateUser(CoreUser item, ref string err);
+        CoreUser GetUserById(int id);
+        IQueryable<CoreUser> GetAllUser();
+        IQueryable<CoreUser> Search(string userName, string email, int pageIndex = 0, int pageSize = int.MaxValue);
     }
 }

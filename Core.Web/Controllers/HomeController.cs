@@ -1,4 +1,5 @@
 ﻿using Core.Service;
+using Core.Service.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,19 @@ namespace Core.Web.Controllers
 {
     public class HomeController : Controller
     {
+        #region Fields
+        readonly IUserService _userService;
+        #endregion
+
+        #region Constructor
+        public HomeController(IUserService userService)
+        {
+            this._userService = userService;
+        }
+        #endregion
         public ActionResult Index()
         {
+            var all = _userService.GetAllUser().ToList();
             return View();
         }
 

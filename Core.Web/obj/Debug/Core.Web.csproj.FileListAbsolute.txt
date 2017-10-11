@@ -55,6 +55,8 @@ D:\github\Core\Core.Web\bin\Core.Business.dll
 D:\github\Core\Core.Web\bin\Core.Common.dll
 D:\github\Core\Core.Web\bin\Core.DataAccess.dll
 D:\github\Core\Core.Web\bin\Core.Service.dll
+D:\github\Core\Core.Web\bin\EntityFramework.dll
+D:\github\Core\Core.Web\bin\EntityFramework.SqlServer.dll
 D:\github\Core\Core.Web\bin\Microsoft.AI.Agent.Intercept.dll
 D:\github\Core\Core.Web\bin\Microsoft.AI.DependencyCollector.dll
 D:\github\Core\Core.Web\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -78,13 +80,15 @@ D:\github\Core\Core.Web\bin\System.Web.WebPages.dll
 D:\github\Core\Core.Web\bin\System.Web.WebPages.Razor.dll
 D:\github\Core\Core.Web\bin\Unity.Mvc5.dll
 D:\github\Core\Core.Web\bin\WebGrease.dll
-D:\github\Core\Core.Web\bin\EntityFramework.dll
 D:\github\Core\Core.Web\bin\Core.Business.pdb
+D:\github\Core\Core.Web\bin\Core.Business.dll.config
 D:\github\Core\Core.Web\bin\Core.Common.pdb
 D:\github\Core\Core.Web\bin\Core.Common.dll.config
 D:\github\Core\Core.Web\bin\Core.DataAccess.pdb
 D:\github\Core\Core.Web\bin\Core.DataAccess.dll.config
 D:\github\Core\Core.Web\bin\Core.Service.pdb
+D:\github\Core\Core.Web\bin\EntityFramework.xml
+D:\github\Core\Core.Web\bin\EntityFramework.SqlServer.xml
 D:\github\Core\Core.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\github\Core\Core.Web\bin\Microsoft.Practices.ServiceLocation.pdb
 D:\github\Core\Core.Web\bin\Microsoft.Practices.ServiceLocation.xml
@@ -105,7 +109,6 @@ D:\github\Core\Core.Web\bin\Microsoft.AI.DependencyCollector.xml
 D:\github\Core\Core.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\github\Core\Core.Web\bin\Microsoft.AI.WindowsServer.xml
 D:\github\Core\Core.Web\bin\Microsoft.AI.Web.xml
-D:\github\Core\Core.Web\bin\EntityFramework.xml
 D:\github\Core\Core.Web\obj\Debug\Core.Web.csprojResolveAssemblyReference.cache
 D:\github\Core\Core.Web\obj\Debug\Core.Web.csproj.CoreCompileInputs.cache
 D:\github\Core\Core.Web\obj\Debug\Core.Web.dll

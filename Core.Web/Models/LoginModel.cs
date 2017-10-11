@@ -9,7 +9,7 @@ namespace Core.Web.Models
     public class LoginModel
     {
         [Required(ErrorMessage = "Mời bạn nhập tài khoản")]
-        [Display(Name = "User name")]
+        [Display(Name = "UserInfo name")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Mời bạn nhập mật khẩu")]

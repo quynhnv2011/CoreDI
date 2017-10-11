@@ -7,22 +7,30 @@ using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System.Data.Entity;
 using Core.Business;
+using Core.Business.EF;
 
 namespace Core.DataAccess
 {
     public class EfRepository<T> : IRepository<T> where T : BaseEntity
     {
         #region Fields      
-        private readonly QlnkContext _context;
-        private DbSet<T> _entities;
+        protected readonly CoreDbContext _context;
+        DbSet<T> _entities;
         #endregion
         public EfRepository()
         {
-            this._context = new QlnkContext();
+            this._context = new CoreDbContext();
         }
-        public EfRepository(QlnkContext context)
+        public EfRepository(CoreDbContext context)
         {
             this._context = context;
+        }
+        protected virtual DbSet<T> SetEntities
+        {
+            set
+            {
+                this._entities = _context.Set<T>();
+            }       
         }
         protected virtual DbSet<T> Entities
         {

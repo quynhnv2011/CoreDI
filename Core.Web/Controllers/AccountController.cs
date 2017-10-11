@@ -1,4 +1,5 @@
-﻿using Core.Business.Object;
+﻿using Core.Business.EF;
+using Core.Business.Object;
 using Core.Service.Users;
 using Core.Web.Models;
 using System;
@@ -12,12 +13,18 @@ namespace Core.Web.Controllers
 {
     public partial class AccountController : Controller
     {
-        private readonly IUserService _userService;
-        
+        #region Fields
+         readonly IUserService _userService;
+        #endregion
+
+        #region Constructor
         public AccountController(IUserService userService)
         {
             this._userService = userService;
         }
+        #endregion
+
+        #region Methods       
         // GET: Account
         [AllowAnonymous]
         public ActionResult Index(string returnUrl)
@@ -32,11 +39,11 @@ namespace Core.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var acc = new User();
+                var acc = new CoreUser();
                 bool checkLogin = _userService.LogIn(model.UserName, model.Password, ref acc);
                 if (checkLogin)
                 {
-                    acc.PassWord = string.Empty;
+                    acc.Password = string.Empty;
                     var json = Newtonsoft.Json.JsonConvert.SerializeObject(acc);
                     FormsAuthentication.SetAuthCookie(json, true);
                 }
@@ -55,7 +62,7 @@ namespace Core.Web.Controllers
             return RedirectToLocal("/Admin/Login/Index");
 
         }
-        private ActionResult RedirectToLocal(string returnUrl)
+         ActionResult RedirectToLocal(string returnUrl)
         {
             if (Url.IsLocalUrl(returnUrl))
             {
@@ -63,6 +70,7 @@ namespace Core.Web.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+        #endregion
     }
 
 }

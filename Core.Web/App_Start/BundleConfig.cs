@@ -15,17 +15,21 @@ namespace Core.Web
                         "~/Scripts/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
-
+            
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bootstrap.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/adminLTE").Include(
+                     "~/Scripts/adminLTE/app.js",
+                     "~/Scripts/adminLTE/jquery-ui-1.10.3.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Content/adminLTE").Include(
+                      "~/Content/adminLTE/css/font-awesome.css",
+                       "~/Content/adminLTE/css/ionicons.css",
+                       "~/Content/adminLTE/css/adminLTE.css"));
         }
     }
 }

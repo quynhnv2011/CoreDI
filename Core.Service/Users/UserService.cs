@@ -11,7 +11,7 @@ using System.Text;
 
 namespace Core.Service.Users
 {
-    public partial class UserService : IUserService
+    public partial class UserService : BaseService, IUserService
     {
         #region Fields     
         public readonly IRepository<CoreUser> _userRepo;

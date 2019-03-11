@@ -172,7 +172,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\CustomJsonResult.cs" />
+    <Compile Include="Helper\Encrypt.cs" />
+    <Compile Include="Helper\EncryptedActionParameterAttribute.cs" />
+    <Compile Include="Helper\MyExtensions.cs" />
+    <Compile Include="Helper\RenderPartialHelper.cs" />
     <Compile Include="libs\Global.cs" />
+    <Compile Include="Models\BaseListModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
